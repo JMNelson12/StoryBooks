@@ -1,0 +1,23 @@
+{
+  "name": "storybooks",
+  "version": "1.0.0",
+  "description": "App to share public or write private stories",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JMNelson12/StoryBooks.git"
+  },
+  "author": "Jacob Nelson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JMNelson12/StoryBooks/issues"
+  },
+  "homepage": "https://github.com/JMNelson12/StoryBooks#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.12.1"
+  }
+}
