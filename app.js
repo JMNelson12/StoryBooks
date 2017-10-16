@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
+const methodOverride = require('method-override'); //Needed to Delete Items
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const path = require('path');
@@ -12,6 +13,9 @@ const express = require('express'),
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+//Method Override Middleware 
+app.use(methodOverride('_method'));
 
 // Load Models
 require('./models/User');
@@ -34,14 +38,18 @@ const keys = require('./config/keys');
 const {
   truncate,
   stripTags,
-  formatDate
+  formatDate,
+  select,
+  editIcon
 } = require('./helpers/hbs');
 
 // Handlebars Middleware
 app.engine('handlebars', exphbs({ helpers:{
   truncate: truncate,
   stripTags: stripTags,
-  formatDate: formatDate
+  formatDate: formatDate,
+  select: select,
+  editIcon: editIcon
 }, defaultLayout:'master' }));
 app.set('view engine', 'handlebars');
 
