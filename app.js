@@ -80,7 +80,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Set static folder !for public folder
+// Set static folder (!for public folder)
 app.use(express.static(path.join(__dirname, 'public')));
 
 /* ---------- Use Routes ---------- */
